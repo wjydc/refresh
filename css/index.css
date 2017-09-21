@@ -1,0 +1,213 @@
+	*{
+		margin:0;
+		padding: 0;
+	}
+/*正文头部*/
+.common_detail{
+  height: 40px;
+  padding: 0 8px;
+  position: relative;
+  border-bottom: 1px solid #f0f1f2;
+  
+}
+.common_detail .back{
+  height:18px;
+  position: absolute;
+  top:11px;
+  left:10px;
+}
+.common_detail a img{
+  height:18px;
+  float: left;
+}
+.common_detail p{
+  width: 60%;
+  height:40px;
+  line-height: 40px;
+  overflow: hidden;
+  text-align: center;
+  font-size:18px;
+ margin:0 auto;
+}
+.common_detail div{
+  height:20px;
+  position: absolute;
+  top:10px;
+  right:10px;
+  overflow: hidden;
+}
+.common_detail div a{
+  height:20px;
+  float: right;
+  margin-right:20px;
+}
+
+.common_detail div a:nth-child(1){
+  margin-right: 0;
+  float: right;
+}
+
+
+
+
+
+
+	.wrap{
+		width:100%;
+		height:auto;
+		padding:0 20px ;
+		background-color: #fff;
+		margin-bottom: 10px;
+		box-sizing:border-box;
+	}
+	.wrap .title{
+		font-size: 18px;
+		color:#000;
+		padding:10px 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+  .wrap .bookName{
+    font-size: 16px;
+    color:#919699;
+     margin-bottom: 10px;
+  }
+	.wrap img{
+		width:100%;
+		height:150px;
+	}
+	.wrap .text{
+		font-size:14px;
+		color:#000;
+		line-height:20px;
+		color:gray;
+		text-align: justify;
+	}
+	.wrap a{
+		display: block;
+		color:#000;
+		text-decoration: none;
+		font-size:16px;
+		padding:10px 0;
+	}
+
+	/*下拉刷新*/
+
+  #scroller {
+   position:relative;
+   -webkit-tap-highlight-color:rgba(0,0,0,0);
+   float:left;
+   width:100%;
+   padding:0;
+  }
+
+  #scroller ul {
+   position:relative;
+   list-style:none;
+   padding:0;
+   margin:0;
+   width:100%;
+   text-align:left;
+  }
+
+  #scroller li {
+   padding:0 10px;
+   height:40px;
+   line-height:40px;
+   border-bottom:1px solid #ccc;
+   border-top:1px solid #fff;
+   background-color:#fafafa;
+   font-size:14px;
+  }
+
+  #scroller li > a {
+   display:block;
+  }
+
+
+ /*下拉样式 Pull down styles*/
+  
+ 
+  #pullDown{
+    /*width:200px;*/
+    margin:0 auto;
+   background:#fff;
+   height:40px;
+   line-height:40px;
+   padding:5px 10px;
+   border-bottom:1px solid #ccc;
+   font-weight:bold;
+   font-size:14px;
+   color:#888;
+   text-align: center;
+  }
+
+
+#pullDown .pullDownIcon, #pullUp .pullUpIcon {
+
+   display:inline-block; 
+   /*float:left;*/
+   margin-right:5px;
+   width:40px; height:40px;
+   background:url(../img/loading.png) 0 0 no-repeat;
+   -webkit-background-size:20px 20px;
+    background-size:20px 20px;
+   -webkit-transition-property:-webkit-transform;
+   -webkit-transition-duration:250ms; 
+  }
+  #pullDown .pullDownIcon {
+   -webkit-transform:rotate(0deg) translateZ(0);
+  }
+  #pullUp .pullUpIcon {
+   -webkit-transform:rotate(-180deg) translateZ(0);
+  }
+
+
+
+/**
+   * 动画效果css3代码
+   */
+  #pullDown.flip .pullDownIcon {
+   -webkit-transform:rotate(-180deg) translateZ(0);
+  }
+
+  #pullUp.flip .pullUpIcon {
+   -webkit-transform:rotate(0deg) translateZ(0);
+  }
+
+  #pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+   background-position:0 100%;
+   -webkit-transform:rotate(0deg) translateZ(0);
+   -webkit-transition-duration:0ms;
+
+   -webkit-animation-name:loading;
+   -webkit-animation-duration:2s;
+   -webkit-animation-iteration-count:infinite;
+   -webkit-animation-timing-function:linear;
+  }
+
+  @-webkit-keyframes loading {
+   from { -webkit-transform:rotate(0deg) translateZ(0); }
+   to { -webkit-transform:rotate(360deg) translateZ(0); }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <title>下拉刷新</title>
+ <link rel="stylesheet" type="text/css" href="css/index.css">
+ <style type="text/css" media="all">
+  
+ </style>
+</head>
+<body>
+ <header class="common_detail box clear">
+       <!--  <a class="back" href="book_review.html" title="">
+            <img src="img/backblack.png" alt="">
+        </a> -->
+        <p>微信登录微</p>
+        <div class=" fr box">
+          
+          <a href="#"><img src="img/house.png" alt=""></a>
+          <a href="#"><img src="img/person.png" alt=""></a>
+      
+        </div>
+  </header>
+ <div id="wrapper">
+    <div id="scroller">
+
+         <div id="pullDown">
+          <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+         </div>
+         <div id="thelist">
+          
+              <div class="wrap">
+              		<p class="title">杀神碰上美女特工。杀神碰上美女特工！</p>
+                  <p class="bookName">切都通过代码实gulp.js -</p>
+              		<img src="img/26.jpg" alt="">
+              		<p class="text">gulp.js - 基于流(stream)的自动化构建工具。Grunt 采用配置文件的方式执行任务，而 Gulp 一切都通过代码实gulp.js - 基于流(stream)的自动化构建工具。Grunt 采用配置采用配置文件的方式执采用配置文件的方式执采用配置文件的方式执采用配置文件的方式执采用配置文件的方式执文件的方式执行任务，而 
+              		</p>
+          		   <a href="#">阅读全文</a>
+          	  </div>
+         </div>
+    </div>
+
+ </div>
+
+
+ <div id="footer"></div>
+<script type="text/javascript" src='./js/jq.js'></script>
+<script type="application/javascript" src="./PlugIn/js/iscroll.js"></script>
+<script type="text/javascript" src='./js/init.js'></script>
+<script type="text/javascript">
+  function textmore(obj){
+    var _this=obj;
+    var txt=$.trim(_this.text());
+    var txtlength=$.trim(_this.text()).length;
+    var max=150;
+
+    if (txtlength>max) {
+      _this.text(txt.substring(0,max))
+      _this.html(_this.html()+'...')
+    } else{
+      _this.html(txt);
+      
+    }
+  }
+  textmore($('.text'));
+
+var generatedCount = 10;
+
+var token='';
+
+
+var index=0;
+var size=4 ;
+function pullDownAction(){
+  
+  function getData(callback){
+    $.ajax({
+       url: 'http://localhost/booknew/data.json',  
+       type: 'GET',  
+       dataType: 'json', 
+       success: function(data){
+         // console.log(data)
+         datas= data.books
+         callback(datas)
+       } 
+    });
+  }
+
+  getData(function(datas){
+    index++;
+     token=datas;
+      setTimeout(function(){ 
+        console.log(token);
+        var el, li;
+        el =$('#thelist');
+         var divs='';
+         var length=token.length;
+        for (var i=(index-1)*size ; i <(index*size>length?length:index*size); i++) {
+         
+            divs =('<div class="wrap"><p class="title">'+token[i].title+'</p><p class="bookName">'+token[i].bookName+'</p><img src="'+token[i].img+'" alt=""><p class="text">'+token[i].text+'</p><a href="#">阅读全文</a></div>') +divs;
+        }
+        el.prepend(divs);
+        myScroll.refresh(); 
+        
+       }, 1000); 
+     
+  })
+
+
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', loaded, false);
+
+
+
+
+  
+</script>
+</body>
+</html>
