@@ -54,7 +54,7 @@
 
 	.wrap{
 		width:100%;
-		height:auto;
+		/*height:auto;*/
 		padding:0 20px ;
 		background-color: #fff;
 		margin-bottom: 10px;
@@ -94,42 +94,31 @@
 
 	/*下拉刷新*/
 
-  #scroller {
-   position:relative;
-   -webkit-tap-highlight-color:rgba(0,0,0,0);
-   float:left;
-   width:100%;
-   padding:0;
-  }
+ #wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    bottom:10px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: #cccccc;
+}
 
-  #scroller ul {
-   position:relative;
-   list-style:none;
-   padding:0;
-   margin:0;
-   width:100%;
-   text-align:left;
-  }
+#scroller {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
 
-  #scroller li {
-   padding:0 10px;
-   height:40px;
-   line-height:40px;
-   border-bottom:1px solid #ccc;
-   border-top:1px solid #fff;
-   background-color:#fafafa;
-   font-size:14px;
-  }
+}
 
-  #scroller li > a {
-   display:block;
-  }
+
 
 
  /*下拉样式 Pull down styles*/
   
  
-  #pullDown{
+  #pullDown, #pullUp{
     /*width:200px;*/
     margin:0 auto;
    background:#fff;
@@ -149,7 +138,9 @@
    display:inline-block; 
    /*float:left;*/
    margin-right:5px;
-   width:40px; height:40px;
+   width:40px; 
+   height:40px;
+   vertical-align: middle;
    background:url(../img/loading.png) 0 0 no-repeat;
    -webkit-background-size:20px 20px;
     background-size:20px 20px;
@@ -193,8 +184,10 @@
   }
 
 
-
-
+/*#wrapper{
+	height: auto;
+	overflow: auto;
+}*/
 
 
 
